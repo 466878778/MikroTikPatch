@@ -163,6 +163,7 @@ jobs:
         sudo wget -nv -O routeros-$LATEST_VERSION-arm.npk https://download.mikrotik.com/routeros/$LATEST_VERSION/routeros-$LATEST_VERSION-arm.npk
         sudo wget -nv -O routeros-arm-6.49.17.npk https://download.mikrotik.com/routeros/6.49.17/routeros-arm-6.49.17.npk
         sudo wget -nv -O routeros-arm-6.48.3.npk https://download.mikrotik.com/routeros/6.48.3/routeros-arm-6.48.3.npk
+        sudo wget -nv -O routeros-7.2rc1-arm.npk https://download.mikrotik.com/routeros/7.2rc1/routeros-7.2rc1-arm.npk
         sudo wget -nv -O routeros-$LATEST_VERSION-mmips.npk https://download.mikrotik.com/routeros/$LATEST_VERSION/routeros-$LATEST_VERSION-mmips.npk
         sudo -E python3 patch.py npk routeros-$LATEST_VERSION-arm.npk
         sudo -E python3 npk.py sign routeros-$LATEST_VERSION-arm.npk routeros-$LATEST_VERSION-arm.npk
@@ -172,6 +173,8 @@ jobs:
         sudo -E python3 npk.py sign routeros-arm-6.49.17.npk routeros-arm-6.49.17.npk
         sudo -E python3 patch.py npk routeros-arm-6.48.3.npk
         sudo -E python3 npk.py sign routeros-arm-6.48.3.npk routeros-arm-6.48.3.npk
+        sudo -E python3 patch.py npk routeros-7.2rc1-arm.npk
+        sudo -E python3 npk.py sign routeros-7.2rc1-arm.npk routeros-7.2rc1-arm.npk
 
     - name: Get and Patch allpackage-arm ${{ env.LATEST_VERSION }}
       run: |
@@ -344,3 +347,4 @@ jobs:
           *.EFI
           routeros-arm-6.49.17.npk
           routeros-arm-6.48.3.npk
+          routeros-7.2rc1-arm.npk
