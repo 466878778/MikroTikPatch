@@ -166,7 +166,7 @@ jobs:
           sudo chmod +x ./option-root/bin/busybox
           sudo cp keygen/keygen_aarch64 ./option-root/bin/keygen
           sudo chmod +x ./option-root/bin/keygen
-        elif [ "${{ matrix.arch }}" == "mmips" ]; then
+        elif [ "${{ matrix.arch }}" == "arm" ]; then
           sudo cp busybox/busybox_arm ./option-root/bin/busybox
           sudo chmod +x ./option-root/bin/busybox
           sudo cp keygen/keygen_arm ./option-root/bin/keygen
