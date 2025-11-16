@@ -143,8 +143,8 @@ jobs:
         cat CHANGELOG
         if [[ "${{ matrix.arch }}" == "arm64" ]]; then
           echo "ARCH=-arm64" >> $GITHUB_ENV
-        elif [[ "${{ matrix.arch }}" == "mmips" ]]; then
-          echo "ARCH=-mmips" >> $GITHUB_ENV
+        elif [[ "${{ matrix.arch }}" == "arm" ]]; then
+          echo "ARCH=-arm" >> $GITHUB_ENV
         else
           echo "ARCH=" >> $GITHUB_ENV
         fi
